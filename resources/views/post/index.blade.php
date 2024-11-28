@@ -11,10 +11,10 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-6">
-                            <h4 class="card-title mb-0 pb-0">Auditoriya guruhlari</h4>
+                            <h4 class="card-title mb-0 pb-0">Targ'ibot materiallari</h4>
                         </div>
                         <div class="col-6" style="text-align:right">
-                            <a href="{{ route('catigore_create') }}" class="btn btn-success"><i class="bi bi-plus"></i></a>
+                            <a href="#" class="btn btn-success"><i class="bi bi-plus"></i></a>
                         </div>
                     </div>
                 </div>
@@ -23,9 +23,9 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Auditoriya nomlanishi</th>
-                                <th>Guruhlar soni</th>
-                                <th>Kanallar soni</th>
+                                <th>chat_id</th>
+                                <th>message_id</th>
+                                <th>description</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -36,8 +36,8 @@
                                 <td>5</td>
                                 <td>4</td>
                                 <td>
-                                    <a href="{{ route('catigore_update',1) }}" class="btn btn-primary m-0 p-0 px-1"><i class="bi bi-pencil"></i></a> 
-                                    <a href="{{ route('catigore_show',1) }}" class="btn btn-success m-0 p-0 px-1"><i class="bi bi-eye"></i></a> 
+                                    <a href="#" class="btn btn-primary m-0 p-0 px-1"><i class="bi bi-pencil"></i></a> 
+                                    <a href="#" class="btn btn-success m-0 p-0 px-1"><i class="bi bi-eye"></i></a> 
                                     <form action="" method="post" style="display: inline;">
                                         <button type="submit" class="btn btn-danger m-0 p-0 px-1"><i class="bi bi-trash"></i></button>
                                     </form>

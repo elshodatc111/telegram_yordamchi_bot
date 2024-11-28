@@ -26,7 +26,7 @@
                         @guest
                         @else
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Targ'ibot materiallari</a>
+                            <a class="nav-link" href="{{ route('post') }}">Targ'ibot materiallari</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('groups') }}">Targ'ibot auditoriyalari(guruh va kanallar)</a>
