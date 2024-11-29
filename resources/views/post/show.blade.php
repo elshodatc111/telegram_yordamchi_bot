@@ -14,7 +14,7 @@
                             <h4 class="card-title mb-0 pb-0">Targ'ibot materiallari</h4>
                         </div>
                         <div class="col-6" style="text-align:right">
-                            <a href="{{ route('post_create') }}" class="btn btn-success"><i class="bi bi-plus"></i></a>
+                            <a href="#" class="btn btn-success"><i class="bi bi-plus"></i></a>
                         </div>
                     </div>
                 </div>
@@ -29,28 +29,21 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody>
-                            @forelse($Post as $item)
+                        <thead>
                             <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $item->chat_id }}</td>
-                                <td>{{ $item->message_id }}</td>
-                                <td>{{ $item->description }}</td>
+                                <td>1</td>
+                                <td>Guruhlar_nomlanishi</td>
+                                <td>5</td>
+                                <td>4</td>
                                 <td>
-                                    <a href="{{ route('post_update', $item->id) }}" class="btn btn-primary m-0 p-0 px-1"><i class="bi bi-pencil"></i></a> 
-                                    <form action="{{ route('post_create_delete', $item->id) }}" method="post" style="display: inline;">
-                                        @csrf
-                                        @method('DELETE')
+                                    <a href="#" class="btn btn-primary m-0 p-0 px-1"><i class="bi bi-pencil"></i></a> 
+                                    <a href="#" class="btn btn-success m-0 p-0 px-1"><i class="bi bi-eye"></i></a> 
+                                    <form action="" method="post" style="display: inline;">
                                         <button type="submit" class="btn btn-danger m-0 p-0 px-1"><i class="bi bi-trash"></i></button>
                                     </form>
                                 </td>
                             </tr>
-                            @empty
-                            <tr>
-                                <td colspan="5">Targ'ibot materiallari mavjud emas.</td>
-                            </tr>
-                            @endforelse
-                        </tbody>
+                        </thead>
                     </table>
                 </div>
             </div>

@@ -30,19 +30,26 @@
                             </tr>
                         </thead>
                         <thead>
+                            @forelse($Groups as $item)
                             <tr>
-                                <td>1</td>
-                                <td>Guruhlar_nomlanishi</td>
-                                <td>5</td>
-                                <td>4</td>
+                                <td>{{ $loop->index+1 }}</td>
+                                <td>{{ $item['name'] }}</td>
+                                <td>{{ $item['gurops'] }}</td>
+                                <td>{{ $item['chanels'] }}</td>
                                 <td>
-                                    <a href="{{ route('catigore_update',1) }}" class="btn btn-primary m-0 p-0 px-1"><i class="bi bi-pencil"></i></a> 
-                                    <a href="{{ route('catigore_show',1) }}" class="btn btn-success m-0 p-0 px-1"><i class="bi bi-eye"></i></a> 
-                                    <form action="" method="post" style="display: inline;">
+                                    <a href="{{ route('catigore_update',$item['id']) }}" class="btn btn-primary m-0 p-0 px-1"><i class="bi bi-pencil"></i></a>
+                                    <form action="{{ route('catigore_delete',$item['id']) }}" method="post" style="display: inline;">
+                                        @csrf 
+                                        @method('delete')
                                         <button type="submit" class="btn btn-danger m-0 p-0 px-1"><i class="bi bi-trash"></i></button>
                                     </form>
                                 </td>
                             </tr>
+                            @empty
+                            <tr>
+                                <td colspan=5 class="text-center">Auditoriya mavjud emas.</td>
+                            </tr>
+                            @endforelse
                         </thead>
                     </table>
                 </div>

@@ -15,9 +15,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-body">
-                    <form action="#" method="post">
-                        <label for="">Auditoriya nomini</label>
+                <div class="card-body"> 
+                    <form action="{{ route('catigore_create_story') }}" method="post">
+                        @csrf 
+                        <label for="catigore_name">Auditoriya nomini</label>
                         <input type="text" name="catigore_name" class="form-control" required>
                         <hr>
                         <div class="row">
@@ -25,60 +26,24 @@
                                 <div class="py-3 mx-4">
                                     <label for="">Auditoriya uchun guruhlarni tanlang</label>
                                     <hr>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="option1" id="checkbox1">
-                                        <label class="form-check-label" for="checkbox1">
-                                            1-guruh nomi
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="option2" id="checkbox2">
-                                        <label class="form-check-label" for="checkbox2">
-                                            2-guruh nomi
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="option3" id="checkbox3">
-                                        <label class="form-check-label" for="checkbox3">
-                                            3-guruh nomi
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="option4" id="checkbox4">
-                                        <label class="form-check-label" for="checkbox4">
-                                            4-guruh nomi
-                                        </label>
-                                    </div>
+                                    @foreach($Group as $item)
+                                        <div class="form-check">
+                                            <input class="form-check-input" name="groups[]" type="checkbox" value="{{ $item['id'] }}" id="group{{ $item['id'] }}">
+                                            <label class="form-check-label" for="group{{ $item['id'] }}">{{ $item['name_group'] }}</label>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="py-3 mx-4">
                                     <label for="">Auditoriya uchun kanallarni tanlang</label>
                                     <hr>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="option1" id="checkbox1">
-                                        <label class="form-check-label" for="checkbox1">
-                                            1-kanal nomi
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="option2" id="checkbox2">
-                                        <label class="form-check-label" for="checkbox2">
-                                            2-kanal nomi
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="option3" id="checkbox3">
-                                        <label class="form-check-label" for="checkbox3">
-                                            3-kanal nomi
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="option4" id="checkbox4">
-                                        <label class="form-check-label" for="checkbox4">
-                                            4-kanal nomi
-                                        </label>
-                                    </div>
+                                    @foreach($Chanel as $item)
+                                        <div class="form-check">
+                                            <input class="form-check-input" name="channels[]" type="checkbox" value="{{ $item['id'] }}" id="chanel{{ $item['id'] }}">
+                                            <label class="form-check-label" for="chanel{{ $item['id'] }}">{{ $item['name_group'] }}</label>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
