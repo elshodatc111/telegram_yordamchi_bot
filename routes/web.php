@@ -34,7 +34,10 @@ Route::delete('/post_create_delete/{id}', [PostController::class, 'delete'])->na
 
 //Card
 Route::get('/card', [CardController::class, 'index'])->name('card');
+Route::get('/card_show_play/{id}', [CardController::class, 'show_play'])->name('card_show_play');
 Route::get('/card_create', [CardController::class, 'create'])->name('card_create');
 Route::get('/card_create_typing', [CardController::class, 'card_create_typing'])->name('card_create_typing');
 Route::delete('/card_delete/{id}', [CardController::class, 'card_delete'])->name('card_delete');
 Route::post('/card_create_story', [CardController::class, 'story'])->name('card_create_story');
+
+Route::post('/get_category_data', [CardController::class, 'getCategoryData'])->name('get_category_data');

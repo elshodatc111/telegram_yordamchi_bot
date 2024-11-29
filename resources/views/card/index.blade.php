@@ -64,7 +64,7 @@
                                         @if($item['status'])
                                             <a href="#" class="btn btn-primary m-0 p-0 px-1"><i class="bi bi-eye"></i></a> 
                                         @else 
-                                            <a href="#" class="btn btn-primary m-0 p-0 px-1"><i class="bi bi-eye"></i></a>
+                                            <a href="{{ route('card_show_play',$item['id']) }}" class="btn btn-primary m-0 p-0 px-1"><i class="bi bi-eye"></i></a>
                                             <form action="{{ route('card_delete',$item['id']) }}" method="post" style="display: inline;">
                                                 @csrf 
                                                 @method('delete')

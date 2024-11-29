@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Card;
 use App\Models\Post;
+use App\Models\CardItem;
 class CardController extends Controller{
     public function index(){
         $Card = Card::get();
@@ -162,6 +163,12 @@ class CardController extends Controller{
         $Card->delete();
         return redirect()->back()->with('status', "Targ'ibot rejasi o'chirildi.");
     }
+    public function show_play($id){
+        $Card = Card::find($id);
+        return view('card.show_play',compact('Card'));
+    }
+    
+
     
 
 }
