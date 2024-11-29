@@ -5,6 +5,7 @@ use App\Http\Controllers\GroupController;
 use App\Http\Controllers\CatigoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CardController;
 
 Auth::routes();
 
@@ -30,3 +31,10 @@ Route::post('/post_create_story', [PostController::class, 'story'])->name('post_
 Route::get('/post_update/{id}', [PostController::class, 'update'])->name('post_update');
 Route::put('/post_update_post/{id}', [PostController::class, 'update_story'])->name('post_update_post');
 Route::delete('/post_create_delete/{id}', [PostController::class, 'delete'])->name('post_create_delete');
+
+//Card
+Route::get('/card', [CardController::class, 'index'])->name('card');
+Route::get('/card_create', [CardController::class, 'create'])->name('card_create');
+Route::get('/card_create_typing', [CardController::class, 'card_create_typing'])->name('card_create_typing');
+Route::delete('/card_delete/{id}', [CardController::class, 'card_delete'])->name('card_delete');
+Route::post('/card_create_story', [CardController::class, 'story'])->name('card_create_story');

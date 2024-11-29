@@ -36,7 +36,7 @@
                             <a class="nav-link" href="{{ route('catigore') }}">Auditoriya guruhlari</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Targ'ibot rejalar</a>
+                            <a class="nav-link" href="{{ route('card') }}">Targ'ibot rejalar</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Bot topshiriqlari</a>
