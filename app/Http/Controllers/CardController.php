@@ -13,6 +13,9 @@ use App\Models\PostJob;
 use Carbon\Carbon;
 
 class CardController extends Controller{
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function index(){
         $Card = Card::get();
         return view('card.index',compact('Card'));

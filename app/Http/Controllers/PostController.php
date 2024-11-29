@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 
 class PostController extends Controller{
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function index(){
         $Post = Post::get();
         return view('post.index',compact('Post'));

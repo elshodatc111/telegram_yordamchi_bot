@@ -7,6 +7,9 @@ use App\Models\CatigoreGroup;
 use App\Models\Catigory;
 use App\Models\Group;
 class CatigoryController extends Controller{
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function index(){
         $Catigory = Catigory::get();
         $Groups = array();

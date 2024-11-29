@@ -39,7 +39,7 @@
                             <a class="nav-link" href="{{ route('card') }}">Targ'ibot rejalar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Bot topshiriqlari</a>
+                            <a class="nav-link" href="{{ route('jobs') }}">Bot topshiriqlari</a>
                         </li>
                         @endguest
                     </ul>

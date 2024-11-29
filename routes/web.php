@@ -10,6 +10,7 @@ use App\Http\Controllers\CardController;
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/jobs', [HomeController::class, 'jobs'])->name('jobs');
 
 // Guruhlar 
 Route::get('/groups', [GroupController::class, 'index'])->name('groups');
