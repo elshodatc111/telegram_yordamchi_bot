@@ -40,4 +40,3 @@ Route::get('/card_create_typing', [CardController::class, 'card_create_typing'])
 Route::delete('/card_delete/{id}', [CardController::class, 'card_delete'])->name('card_delete');
 Route::post('/card_create_story', [CardController::class, 'story'])->name('card_create_story');
 
-Route::post('/get_category_data', [CardController::class, 'getCategoryData'])->name('get_category_data');

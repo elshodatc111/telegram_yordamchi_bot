@@ -167,7 +167,7 @@ class CardController extends Controller{
         $Card = Card::find($id);
         return view('card.show_play',compact('Card'));
     }
-    
+
 
     
 

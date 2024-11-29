@@ -98,13 +98,12 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
                     <form action="#" method="POST">
                         @csrf
                         <div class="row">
                             <div class="col-lg-12">
                                 <label for="group_type">Guruh turlari</label>
-                                <select name="group_type" id="group_type" required class="form-select my-2" onchange="fetchInputs()">
+                                <select name="group_type" id="group_type" required class="form-select my-2" onchange="showUser(this.value)">
                                     <option value="">Tanlang...</option>
                                     <option value="all_channels_groups">Barcha guruh(kanal)lar</option>
                                     <option value="all_channels">Barcha kanallar</option>
@@ -113,17 +112,14 @@
                                 </select>
                             </div>
                             <div class="col-12">
-                                <div id="catigory">Bu yerda tanlangan turga mos inputlar chiqadi</div>
+                                <div id="txtHint">Bu yerda tanlangan turga mos inputlar chiqadi</div>
                             </div>
                             <div class="col-lg-12">
                                 <button type="submit" class="btn btn-primary w-100">Saqlash</button>
                             </div>
                         </div>
                     </form>
-
-
-
-
+                    
                 </div>
             </div>
         </div>
