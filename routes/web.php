@@ -39,4 +39,7 @@ Route::get('/card_create', [CardController::class, 'create'])->name('card_create
 Route::get('/card_create_typing', [CardController::class, 'card_create_typing'])->name('card_create_typing');
 Route::delete('/card_delete/{id}', [CardController::class, 'card_delete'])->name('card_delete');
 Route::post('/card_create_story', [CardController::class, 'story'])->name('card_create_story');
-
+Route::get('/fetch-groups/{groupType}', [CardController::class, 'fetchGroups'])->name('fetch.groups'); 
+Route::post('/card_groups_plus', [CardController::class, 'card_groups_plus'])->name('card_groups_plus');
+Route::delete('/card_groups_delete/{id}', [CardController::class, 'card_groups_delete'])->name('card_groups_delete');
+Route::post('/card_run', [CardController::class, 'card_run'])->name('card_run');
