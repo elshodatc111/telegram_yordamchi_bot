@@ -292,7 +292,7 @@ class CardController extends Controller{
                 $count = $count + 1;
                 PostJob::create([
                     'post_id'=>$post_id,
-                    'chat_id'=>$value->group_id,
+                    'chat_id'=>Group::find($value->group_id)->tg_id,
                     'chat_type'=>Group::find($value->group_id)->group_type,
                     'day'=>$data,
                     'time'=>$time,
@@ -314,9 +314,9 @@ class CardController extends Controller{
             foreach ($Kunlar as $key => $value) {
                 $data = $value;
                 foreach ($CardItem as $key2 => $value2) {
-                    PostJob::create([
+                    PostJob::create(attributes: [
                         'post_id'=>$Card->post_id,
-                        'chat_id'=>$id,
+                        'chat_id'=>$value2->tg_id,
                         'chat_type'=>$value2->group_type,
                         'day'=>$data,
                         'time'=>$time,
@@ -342,14 +342,15 @@ class CardController extends Controller{
             if($Card['friday']=='on'){$Kunlar = array_merge($Kunlar,$this->getDatesWithWeekdayBetweenDates($StartData, $EndData, 'Friday'));}
             if($Card['saturday']=='on'){$Kunlar = array_merge($Kunlar,$this->getDatesWithWeekdayBetweenDates($StartData, $EndData, 'Saturday'));}
             if($Card['sunday']=='on'){$Kunlar = array_merge($Kunlar,$this->getDatesWithWeekdayBetweenDates($StartData, $EndData, 'Sunday'));}
-            $CardItem = CardItem::where('card_items.card_id',$id)->join('groups', 'card_items.group_id', '=', 'groups.id')->get();
+            $CardItem = CardItem::where('card_items.card_id',operator: $id)->join('groups', 'card_items.group_id', '=', 'groups.id')->get();
             $count = 0;
             foreach ($Kunlar as $key => $value) {
                 $data = $value;
                 foreach ($CardItem as $key2 => $value2) {
+                    error_log('Some message here.'.$value2);
                     PostJob::create([
                         'post_id'=>$Card->post_id,
-                        'chat_id'=>$id,
+                        'chat_id'=>$value2->tg_id,
                         'chat_type'=>$value2->group_type,
                         'day'=>$data,
                         'time'=>$time,
